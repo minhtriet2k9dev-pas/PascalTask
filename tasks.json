@@ -1,0 +1,61 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Run Pascal",
+      "type": "shell",
+      "command": "fpc -g -Sm -Sc -Mobjfpc \"${fileDirname}\\${fileBasename}\" ; \"${fileDirname}\\${fileBasenameNoExtension}\"",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "args": [
+        {
+          "quoting": "escape"
+        }
+      ],
+      "problemMatcher": {
+        "owner": "external",
+        "pattern": {
+          "regexp": "^([\\w]+\\.(p|pp|pas))\\((\\d+)\\,(\\d+)\\)\\s(Fatal|Error|Warning|Note):(.*)",
+          "file": 1,
+          "line": 3,
+          "column": 4,
+          "message": 6
+        }
+      }
+    },
+    {
+      "label": "Debug Pascal",
+      "type": "shell",
+      "command": "fpc -g -Sm -Sc -Mobjfpc \"${fileDirname}\\${fileBasename}\" ; gdb \"${fileDirname}\\${fileBasenameNoExtension}\"",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "args": [
+        {
+          "quoting": "escape"
+        }
+      ],
+      "problemMatcher": {
+        "owner": "external",
+        "pattern": {
+          "regexp": "^([\\w]+\\.(p|pp|pas))\\((\\d+)\\,(\\d+)\\)\\s(Fatal|Error|Warning|Note):(.*)",
+          "file": 1,
+          "line": 3,
+          "column": 4,
+          "message": 6
+        }
+      }
+    }
+  ]
+}
