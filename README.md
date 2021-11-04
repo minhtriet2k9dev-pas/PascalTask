@@ -1,2 +1,2 @@
 # PascalTask
-A pascal task for vscode
+Some pascal tasks for vscode
